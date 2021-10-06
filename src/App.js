@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import CardList from "./components/card-list/CardList";
+import CardList from "./components/cardList/CardList";
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -13,11 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <CardList name="anjan">
-        {monsters.map((monster) => (
-          <h1 key={monster.id}>{monster.name}</h1>
-        ))}
-      </CardList>
+      <CardList monsters={monsters} />
     </div>
   );
 }
