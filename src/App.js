@@ -1,17 +1,23 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CardList from "./components/card-list/CardList";
 
 function App() {
-  const [monsters, setMonsters] = useState([
-    { name: "Pikachu", id: "mon1" },
-    { name: "Bulbasaur", id: "mon2" },
-    { name: "Charmander", id: "mon3" },
-  ]);
+  const [monsters, setMonsters] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => setMonsters(users));
+  }, []);
+
   return (
     <div className="App">
-      {monsters.map((monster) => (
-        <h1 key={monster.id}>{monster.name}</h1>
-      ))}
+      <CardList name="anjan">
+        {monsters.map((monster) => (
+          <h1 key={monster.id}>{monster.name}</h1>
+        ))}
+      </CardList>
     </div>
   );
 }
