@@ -12,6 +12,10 @@ function App() {
       .then((users) => setMonsters(users));
   }, []);
 
+  const filteredMonsters = monsters.filter((monster) =>
+    monster.name.toLowerCase().includes(searchField.toLowerCase())
+  );
+
   return (
     <div className="App">
       <input
@@ -19,7 +23,7 @@ function App() {
         placeholder="Search Monster"
         onChange={(e) => setSearchField(e.target.value)}
       />
-      <CardList monsters={monsters} />
+      <CardList monsters={filteredMonsters} />
     </div>
   );
 }
