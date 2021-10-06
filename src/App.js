@@ -4,6 +4,7 @@ import CardList from "./components/cardList/CardList";
 
 function App() {
   const [monsters, setMonsters] = useState([]);
+  const [searchField, setSearchField] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -13,6 +14,11 @@ function App() {
 
   return (
     <div className="App">
+      <input
+        type="search"
+        placeholder="Search Monster"
+        onChange={(e) => setSearchField(e.target.value)}
+      />
       <CardList monsters={monsters} />
     </div>
   );
