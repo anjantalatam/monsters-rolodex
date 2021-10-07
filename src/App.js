@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="title">Monsters Rolodex</h1>
       <SearchBox placeholder="Search Monster" handleChange={handleChange} />
       <CardList monsters={filteredMonsters} />
     </div>
