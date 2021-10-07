@@ -17,12 +17,13 @@ function App() {
     monster.name.toLowerCase().includes(searchField.toLowerCase())
   );
 
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
+
   return (
     <div className="App">
-      <SearchBox
-        placeholder="Search Monster"
-        handleChange={(e) => setSearchField(e.target.value)}
-      />
+      <SearchBox placeholder="Search Monster" handleChange={handleChange} />
       <CardList monsters={filteredMonsters} />
     </div>
   );
