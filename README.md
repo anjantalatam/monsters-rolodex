@@ -4,3 +4,4 @@
 
 - React App to get famialirised with hosting single page application on GitHub
 - Fully styled Components with basic CSS.
+- Responsive ✅

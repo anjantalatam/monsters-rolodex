@@ -9,9 +9,14 @@
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   transform: translateZ(0);
+  width: 18vw;
   transition: transform 0.25s ease-out;
+  overflow: hidden;
 }
 
+.wrapOnOverflow {
+  word-wrap: break-word;
+}
 .card-container:hover {
   transform: scale(1.05);
 }

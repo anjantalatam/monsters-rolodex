@@ -9,7 +9,7 @@ export default function Card({ monster }) {
         alt=""
       />
       <h2>{monster.name}</h2>
-      <p>{monster.email}</p>
+      <p className="wrapOnOverflow">{monster.email}</p>
     </div>
   );
 }
